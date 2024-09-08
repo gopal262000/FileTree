@@ -1,0 +1,70 @@
+.folder-child {
+  list-style: none;
+  cursor: pointer;
+  padding: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.folder-child:hover {
+  background-color: rgb(232, 231, 231);
+  border-radius: 5px;
+  /* width: fit-content; */
+}
+
+/* Vertical line extending from parent to child */
+.folder-child[data-show-line="true"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -15px; /* Position the line slightly to the left */
+  width: 2px;
+  height: 100%;
+  background-color: #a2a1a1;
+}
+
+/* Horizontal line connecting icon and vertical line */
+.folder-child[data-show-line="true"]::after {
+  content: "";
+  position: absolute;
+  top: 12px; /* Aligns the line vertically with the icon */
+  left: -15px; /* Adjust the left position to align correctly */
+  width: 12px; /* Length of the horizontal line */
+  border-top: 2px solid #a2a1a1;
+}
+
+/* Wrapper to align icon and title centrally */
+.icon-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Shortens the last vertical line to create a clear end */
+ol > .folder-child:last-child::before {
+  height: 12px;
+}
+
+.file-actions {
+  display: none;
+}
+
+.folder-child:hover .file-actions {
+  /* .folder-child .file-actions { */
+  display: flex; /* Show the file action button when the parent is hovered */
+  /* margin-left: 50px; */
+  flex-direction: row;
+  gap: 10px;
+}
+
+.input-file-name {
+  border: none;
+  background-color: aliceblue;
+  height: 100%;
+}
+
+.input-file-name:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px hsla(220, 100%, 50%, 80%);
+}

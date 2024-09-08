@@ -1,0 +1,19 @@
+.modal-actions {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.btn-cancel {
+  background: #e2e2e2;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-confirm {
+  background: #d9534f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
